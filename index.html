@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار تحضيري لشهادة التعليم المتوسط BEM - رياضيات</title>
+<style>
+:root{
+ --primary-dark:#1a252f;--primary-accent:#2c3e50;--secondary-color:#2980b9;
+ --accent-gold:#f39c12;--accent-green:#27ae60;
+ --bg-gradient:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+ --card-bg:#fff;--text-main:#2c3e50;--shadow:0 10px 25px rgba(0,0,0,.1)
+}
+*{box-sizing:border-box}
+body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg-gradient);
+color:var(--text-main);margin:0;padding:16px;direction:rtl;text-align:right;min-height:100vh}
+.container{max-width:850px;margin:auto;background:#fff;padding:28px;border-radius:20px;
+box-shadow:var(--shadow);border-top:6px solid var(--accent-gold)}
+header{text-align:center;border-bottom:3px solid #ecf0f1;padding-bottom:20px;margin-bottom:25px}
+.bem-badge{background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;display:inline-block;
+padding:6px 18px;border-radius:50px;font-size:14px;font-weight:bold;margin-bottom:10px}
+h1{color:var(--primary-dark);margin:5px 0 15px;font-size:25px}
+.teacher-banner{display:inline-flex;align-items:center;gap:10px;background:#fdfefe;
+border:2px solid #ebf5fb;padding:9px 18px;border-radius:35px;box-shadow:0 4px 12px rgba(41,128,185,.1)}
+.teacher-name{font-size:17px;font-weight:bold;color:var(--primary-accent)}
+.facebook-link{display:inline-flex;align-items:center;gap:6px;background:#1877f2;color:white;
+text-decoration:none;padding:6px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+.student-inputs{display:flex;gap:15px;margin-bottom:25px;background:#f8f9fa;padding:18px;
+border-radius:12px;border:1px solid #e2e8f0}
+.student-inputs div{flex:1} label{display:block;margin-bottom:7px;font-weight:bold;color:var(--primary-accent)}
+input[type=text]{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.question-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;
+margin-bottom:20px;box-shadow:0 3px 10px rgba(0,0,0,.03)}
+.question-title{font-size:17px;font-weight:bold;color:var(--primary-dark);margin-bottom:14px;
+display:flex;align-items:center;flex-wrap:wrap;gap:7px;line-height:1.7}
+.math-expr{direction:ltr;unicode-bidi:embed;display:inline-block;font-weight:bold;color:#2980b9}
+.math-block{direction:ltr;unicode-bidi:embed;text-align:left;background:#f1f5f9;padding:12px 18px;
+border-radius:8px;border-left:5px solid var(--secondary-color);margin:12px 0;font-size:18px;font-weight:bold}
+.fraction{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:16px;
+font-weight:bold;padding:0 4px;direction:ltr}
+.numerator{border-bottom:2px solid #334155;padding-bottom:2px}.denominator{padding-top:2px}
+.options-group{display:flex;flex-direction:column;gap:9px;margin-bottom:13px}
+.option-label{display:flex;align-items:center;gap:10px;background:#fafafa;border:1px solid #e2e8f0;
+padding:11px 14px;border-radius:8px;cursor:pointer;font-size:15px}
+.option-label:hover{background:#f0f7ff;border-color:#93c5fd}
+input[type=radio]{accent-color:var(--secondary-color);width:18px;height:18px}
+.hint-btn{background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:6px 13px;border-radius:6px;
+cursor:pointer;font-size:14px;font-weight:bold;margin-top:4px}
+.hint-box{display:none;background:#fffbeb;border-right:4px solid var(--accent-gold);padding:11px;
+margin-top:9px;font-size:14px;color:#78350f;border-radius:6px;line-height:1.6}
+.submit-section{text-align:center;margin-top:30px}
+.submit-btn{background:linear-gradient(135deg,var(--accent-green),#219653);color:#fff;border:0;
+padding:14px 30px;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;
+box-shadow:0 6px 15px rgba(39,174,96,.3)}
+#result-container{display:none;margin-top:28px;padding:23px;background:#f0fdf4;border:2px solid var(--accent-green);
+border-radius:12px;text-align:center}
+.result-score{font-size:23px;font-weight:bold;color:var(--primary-dark);margin-bottom:12px}
+.encouragement{font-size:18px;color:var(--accent-green);font-weight:bold}
+@media(max-width:600px){
+ body{padding:8px}.container{padding:17px;border-radius:14px}
+ h1{font-size:21px}.student-inputs{flex-direction:column;gap:10px;padding:14px}
+ .teacher-banner{flex-direction:column}.question-card{padding:16px}.question-title{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="bem-badge">مستوى الرابعة متوسط (4AM)</div>
+<h1>اختبار تحضيري لشهادة التعليم المتوسط (BEM)</h1>
+<div class="teacher-banner">
+<span class="teacher-name">الأستاذ: عباوي</span>
+<a class="facebook-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook · oustad Abaoui</a>
+</div>
+</header>
+
+<div class="student-inputs">
+<div><label for="student-name">لقب التلميذ(ة):</label>
+<input type="text" id="student-name" placeholder="أدخل اللقب هنا"></div>
+<div><label for="student-firstname">اسم التلميذ(ة):</label>
+<input type="text" id="student-firstname" placeholder="أدخل الاسم هنا"></div>
+</div>
+
+<div id="quiz-form">
+
+<div class="question-card" data-q="1" data-answer="b">
+<div class="question-title">1. ما هو القاسم المشترك الأكبر للعددين <span class="math-expr">36</span> و <span class="math-expr">24</span> ؟</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q1" value="a"> أ) <span class="math-expr">4</span></label>
+<label class="option-label"><input type="radio" name="q1" value="b"> ب) <span class="math-expr">6</span></label>
+<label class="option-label"><input type="radio" name="q1" value="c"> ج) <span class="math-expr">12</span></label>
+</div>
+<button class="hint-btn" onclick="toggleHint(1)">💡 عرض المساعدة</button>
+<div id="hint-1" class="hint-box">تلميح: استعمل خوارزمية أقليدس (القسمات المتتالية) لإيجاد PGCD.</div>
+</div>
+
+<div class="question-card" data-q="2" data-answer="true">
+<div class="question-title">2. العددان <span class="math-expr">19</span> و <span class="math-expr">20</span> أوليان فيما بينهما.</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q2" value="true"> صحيح</label>
+<label class="option-label"><input type="radio" name="q2" value="false"> خطأ</label>
+</div>
+<button class="hint-btn" onclick="toggleHint(2)">💡 عرض المساعدة</button>
+<div id="hint-2" class="hint-box">تلميح: احسب القاسم المشترك الأكبر لهما، إذا كان يساوي 1 فهما أوليان.</div>
+</div>
+
+<div class="question-card" data-q="3" data-answer="a">
+<div class="question-title">3. الكسر
+<span class="fraction"><span class="numerator">27</span><span class="denominator">45</span></span>
+غير قابل للاختزال.</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q3" value="a"> أ) خطأ</label>
+<label class="option-label"><input type="radio" name="q3" value="b"> ب) صحيح</label>
+</div>
+<button class="hint-btn" onclick="toggleHint(3)">💡 عرض المساعدة</button>
+<div id="hint-3" class="hint-box">تلميح: ابحث عن قواسم البسط والمقام وتأكد هل يقبلان القسمة على عدد مشترك أكبر من 1.</div>
+</div>
+
+<div class="question-card" data-q="4" data-answer="b">
+<div class="question-title">4. احسب المجموع A:</div>
+<div class="math-block">A =
+<span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span> -
+<span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span></div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q4" value="a"> أ) <span class="fraction"><span class="numerator">1</span><span class="denominator">6</span></span></label>
+<label class="option-label"><input type="radio" name="q4" value="b"> ب) - <span class="fraction"><span class="numerator">1</span><span class="denominator">6</span></span></label>
+<label class="option-label"><input type="radio" name="q4" value="c"> ج) <span class="fraction"><span class="numerator">1</span><span class="denominator">5</span></span></label>
+</div>
+<button class="hint-btn" onclick="toggleHint(4)">💡 عرض المساعدة</button>
+<div id="hint-4" class="hint-box">تلميح: وحد المقام إلى العدد 6 قبل الطرح.</div>
+</div>
+
+<div class="question-card" data-q="5" data-answer="c">
+<div class="question-title">5. ما هو العدد الأولي من بين الأعداد التالية ؟</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q5" value="a"> أ) <span class="math-expr">15</span></label>
+<label class="option-label"><input type="radio" name="q5" value="b"> ب) <span class="math-expr">21</span></label>
+<label class="option-label"><input type="radio" name="q5" value="c"> ج) <span class="math-expr">17</span></label>
+</div>
+<button class="hint-btn" onclick="toggleHint(5)">💡 عرض المساعدة</button>
+<div id="hint-5" class="hint-box">تلميح: العدد الأولي له قاسمان فقط هما 1 ونفسه.</div>
+</div>
+
+<div class="question-card" data-q="6" data-answer="a">
+<div class="question-title">6. أوجد قيمة العبارة B بإتباع قواعد الأولوية:</div>
+<div class="math-block">B =
+<span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span> +
+<span class="fraction"><span class="numerator">5</span><span class="denominator">2</span></span> ×
+<span class="fraction"><span class="numerator">1</span><span class="denominator">5</span></span></div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q6" value="a"> أ) <span class="fraction"><span class="numerator">5</span><span class="denominator">4</span></span></label>
+<label class="option-label"><input type="radio" name="q6" value="b"> ب) <span class="fraction"><span class="numerator">4</span><span class="denominator">3</span></span></label>
+<label class="option-label"><input type="radio" name="q6" value="c"> ج) <span class="fraction"><span class="numerator">7</span><span class="denominator">4</span></span></label>
+</div>
+<button class="hint-btn" onclick="toggleHint(6)">💡 عرض المساعدة</button>
+<div id="hint-6" class="hint-box">تلميح: أولوية الحساب للضرب أولاً، ثم الجمع بتوحيد المقامات.</div>
+</div>
+
+<div class="question-card" data-q="7" data-answer="a">
+<div class="question-title">7. احسب قيمة العبارة C:</div>
+<div class="math-block">C =
+(<span class="fraction"><span class="numerator">1</span><span class="denominator">3</span></span>)<sup>2</sup> +
+<span class="fraction"><span class="numerator">7</span><span class="denominator">2</span></span> ×
+(<span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span>)<sup>-2</sup></div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q7" value="a"> أ) <span class="fraction"><span class="numerator">575</span><span class="denominator">72</span></span></label>
+<label class="option-label"><input type="radio" name="q7" value="b"> ب) <span class="fraction"><span class="numerator">67</span><span class="denominator">36</span></span></label>
+<label class="option-label"><input type="radio" name="q7" value="c"> ج) <span class="fraction"><span class="numerator">11</span><span class="denominator">9</span></span></label>
+</div>
+<button class="hint-btn" onclick="toggleHint(7)">💡 عرض المساعدة</button>
+<div id="hint-7" class="hint-box">تلميح: (1/3)² = 1/9 و (2/3)⁻² = (3/2)² = 9/4، ثم احسب الضرب قبل الجمع.</div>
+</div>
+
+<div class="question-card" data-q="8" data-answer="b">
+<div class="question-title">8. (مسألة الباقات) لدى بائع زهور <span class="math-expr">40</span> زهرة حمراء و<span class="math-expr">30</span> زهرة بيضاء، يريد صنع أكبر عدد ممكن من الباقات المتماثلة تماماً دون بقايا. ما هو أكبر عدد من الباقات ؟</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q8" value="a"> أ) <span class="math-expr">5</span> باقات</label>
+<label class="option-label"><input type="radio" name="q8" value="b"> ب) <span class="math-expr">10</span> باقات</label>
+<label class="option-label"><input type="radio" name="q8" value="c"> ج) <span class="math-expr">20</span> باقة</label>
+</div>
+<button class="hint-btn" onclick="toggleHint(8)">💡 عرض المساعدة</button>
+<div id="hint-8" class="hint-box">تلميح: ابحث عن PGCD للعددين 40 و30.</div>
+</div>
+
+<div class="question-card" data-q="9" data-answer="a">
+<div class="question-title">9. (تابع المسألة) بالاعتماد على النتيجة السابقة، ما عدد الزهور الحمراء في كل باقة ؟</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q9" value="a"> أ) <span class="math-expr">4</span> زهور حمراء</label>
+<label class="option-label"><input type="radio" name="q9" value="b"> ب) <span class="math-expr">3</span> زهور حمراء</label>
+<label class="option-label"><input type="radio" name="q9" value="c"> ج) <span class="math-expr">5</span> زهور حمراء</label>
+</div>
+<button class="hint-btn" onclick="toggleHint(9)">💡 عرض المساعدة</button>
+<div id="hint-9" class="hint-box">تلميح: اقسم عدد الزهور الحمراء الكلي على عدد الباقات.</div>
+</div>
+
+<div class="question-card" data-q="10" data-answer="c">
+<div class="question-title">10. (تابع المسألة) ما عدد الزهور البيضاء في كل باقة ؟</div>
+<div class="options-group">
+<label class="option-label"><input type="radio" name="q10" value="a"> أ) <span class="math-expr">4</span> زهور بيضاء</label>
+<label class="option-label"><input type="radio" name="q10" value="b"> ب) <span class="math-expr">5</span> زهور بيضاء</label>
+<label class="option-label"><input type="radio" name="q10" value="c"> ج) <span class="math-expr">3</span> زهور بيضاء</label>
+</div>
+<button class="hint-btn" onclick="toggleHint(10)">💡 عرض المساعدة</button>
+<div id="hint-10" class="hint-box">تلميح: اقسم عدد الزهور البيضاء الكلي على عدد الباقات.</div>
+</div>
+
+<div class="submit-section">
+<button class="submit-btn" onclick="calculateResult()">تصحيح الاختبار وعرض النتيجة</button>
+</div>
+</div>
+
+<div id="result-container">
+<div id="result-text" class="result-score"></div>
+<div id="encouragement-text" class="encouragement"></div>
+</div>
+</div>
+
+<script>
+function toggleHint(qNum){
+ const box=document.getElementById("hint-"+qNum);
+ box.style.display=box.style.display==="block"?"none":"block";
+}
+function calculateResult(){
+ const name=document.getElementById("student-name").value.trim();
+ const firstname=document.getElementById("student-firstname").value.trim();
+ if(!name||!firstname){alert("الرجاء إدخال لقب واسم التلميذ(ة) قبل عرض النتيجة !");return;}
+ const cards=document.querySelectorAll(".question-card");
+ let score=0, answered=0;
+ cards.forEach((card,index)=>{
+  const q=index+1, correct=card.getAttribute("data-answer");
+  const selected=card.querySelector('input[name="q'+q+'"]:checked');
+  if(selected){
+   answered++;
+   if(selected.value===correct) score+=2;
+  }
+ });
+ document.getElementById("result-container").style.display="block";
+ document.getElementById("result-text").innerHTML=
+ `التلميذ(ة): ${name} ${firstname} — العلامة: <span style="color:#e74c3c">${score}</span> / 20<br>
+ <small style="font-size:14px;color:#64748b">عدد الأسئلة المجاب عنها: ${answered} / 10</small>`;
+ let message="";
+ if(score===20) message="ممتاز جداً! علامة كاملة، أحسنت! 🌟";
+ else if(score>=14) message="رائع جداً! عمل ممتاز ومستوى مشرف. استمر هكذا! 👍";
+ else if(score>=10) message="جيد! يمكنك تحسين نتيجتك أكثر بالمراجعة والتدريب. 💪";
+ else message="لا بأس، راجع الدروس وحاول مرة أخرى. ستتحسن بإذن الله! 📚";
+ document.getElementById("encouragement-text").textContent=message;
+ document.getElementById("result-container").scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
